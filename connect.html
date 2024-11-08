@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Page</title>
+    <link rel="icon" href="monk1.png" sizes="32x32" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background-color: white;
+    min-height: 100vh;  /* Use min-height instead of height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+.content {
+    flex-grow: 1;  /* This allows the content to take available space */
+    margin-top: 100px; /* Keep the margin for navbar */
+    padding: 20px;
+    padding-left: 40px;
+}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            height: 80px;
+            width: 100%;
+            padding: 0 40px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a.active {
+            color: darkorange;
+        }
+
+        .nav-links a:hover {
+            color: darkorange;
+        }
+
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .content h1 {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .form-group input {
+            border: none;
+            border-bottom: 2px solid #FF7900;
+            padding: 8px 0;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .name, .phone {
+            width: 95%;
+        }
+
+        .address, .email {
+            width: 95%;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .comment-section {
+            margin-top: 30px;
+        }
+
+        .comment-section label {
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .comment-box {
+            border: 2px solid #FF7900;
+            height: 280px;
+            width: calc(100% - 40px);
+            padding: 10px;
+            resize: none;
+            outline: none;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .submit-button:hover {
+        background-color: #ff7900; /* Change background on hover */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        color: black; /* Change text color on hover */
+    }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comment-box {
+                width: 100%;
+            }
+        }
+
+         .footer-content {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            padding: 1px 20px;
+            color: white;
+            gap: 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            margin-right: 25px;
+            justify-content: center;
+            height: 100%;
+            padding-top:5px;
+            padding-bottom: -5px;
+        }
+.footer-section .logo img {
+    margin-left: 20px;
+    padding-bottom: 5px;
+}
+        .footer-icons {
+    display: flex;
+    gap: 10px;
+            padding-bottom: -5px;
+
+}
+
+.footer-icons img {
+    width: 24px;
+    height: 24px;
+            padding-bottom: -5px;
+}
+
+.footer-section div:last-child {
+    margin-top: 1px;
+    font-size: 16px;
+    color: white;
+}
+
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .footer-section .logo img {
+        margin-left: 0;
+    }
+
+    .footer-section div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-icons {
+        justify-content: center;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="monk1.png" alt="Logo">
+    </a>
+    <div class="nav-links">
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="connect.html" class="active">Connect</a>
+    </div>
+</nav>
+
+<div class="content">
+    <h1>Contact Us</h1>
+    <p>Please contact us here with any inquiries or questions. We are excited to hear from you!</p>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="name">Name<span class="required">*</span></label>
+            <input type="text" id="name" class="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address<span class="required">*</span></label>
+            <input type="text" id="address" class="address" placeholder="Enter your address" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number<span class="required">*</span></label>
+            <input type="text" id="phone" class="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" class="email" placeholder="Enter your email" required>
+        </div>
+    </div>
+    <br>
+    <div class="comment-section">
+        <label for="comment">Comment<span class="required">*</span></label>
+        <br>
+        <br>
+        <textarea id="comment" class="comment-box" placeholder="I am interested to book a free consultation.............................."></textarea>
+        <<button style="width: 168px; height: 44px; background-color: #d9d9d9; border: 2px solid #ff7900; border-radius: 15px; cursor: pointer; margin-top: 20px; font-weight: 600; font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;"
+                 class="submit-button">
+        Submit Inquiry
+    </button>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <a href="index.html" class="logo">
+                <img src="monk1.png" alt="Logo">
+            </a>
+        </div>
+        <div class="footer-section">
+            <div>Ethiopia: +251942471649</div>
+            <div>Rwanda: +250794555111</div>
+        </div>
+         <div class="footer-section">
+    <a href="mailto:Info.et@lamonje.com" class="email-link">Info.et@lamonje.com</a>
+    <a href="mailto:Info.rw@lamonje.com" class="email-link">Info.rw@lamonje.com</a>
+</div>
+<style>
+.email-link {
+    color: inherit; /* Keeps the link color the same as the surrounding text */
+    text-decoration: none; /* Removes the underline */
+}
+
+.email-link:hover {
+    text-decoration: underline; /* Adds underline on hover to indicate it's clickable */
+}
+</style>
+        <div class="footer-section">
+            <div><a href="work.html">Work</a></div>
+            <div><a href="about.html">About</a></div>
+        </div>
+        <style>
+            .footer-section a {
+                text-decoration: none;  /* Prevent underline */
+                color: inherit;         /* Maintain the current color (white in this case) */
+            }
+        </style>
+        <div class="footer-section">
+            <div style="display: flex; align-items: center;">
+                <a href="connect.html" style="text-decoration: none; color: inherit;">
+                    <div>Connect</div>
+                </a>&nbsp;&nbsp;&nbsp;
+                <div class="footer-icons">
+                    <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi33b3qweWIAxXiU6QEHTgzDy4QFnoECBUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fla_monje%2F&usg=AOvVaw1Ik4EjdyNeVr5YIsv6Ypuz&opi=89978449" target="_blank">
+                        <img src="ig.png" alt="Instagram Icon">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                        <img src="link.png" alt="LinkedIn Icon">
+                    </a>
+
+                    <a href="https://www.facebook.com/lamonjecomms" target="_blank">
+                        <img src="fb.png" alt="Facebook Icon">
+                    </a>
+
+                </div>
+            </div>
+            <div>Copyright. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
