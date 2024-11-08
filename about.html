@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="icon" href="monk1.png" sizes="32x32" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            height: 80px;
+            width: 100%;
+            padding: 0 40px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a.active {
+            color: darkorange;
+        }
+
+        .nav-links a:hover {
+            color: darkorange;
+        }
+
+ @media (max-width: 768px) {
+    html, body {
+    overflow-x: hidden;
+}
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comment-box {
+                width: 100%;
+            }
+        }
+      .content {
+    margin-top: -5px;
+    padding: 20px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.content h1 {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 22px;
+}
+
+.story-partner {
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.story-partner > div {
+    flex: 1;
+}
+
+.story-partner img {
+    width: 900px;
+    height: auto;
+    max-width: 100%;
+    margin-left: 20px;
+}
+
+.footer-print {
+    font-size: 45px;
+    text-align: left;
+    margin-top: 150px;
+    padding-left: 40px;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 50px;
+    margin-top: -5px;
+    padding-left: 40px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.image-gallery div {
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 500px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+.location-header {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .content {
+        padding: 20px; /* Add padding for mobile */
+        text-align: center; /* Center text */
+    }
+
+    .story-partner {
+        margin-top: 50px;
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .story-partner img {
+        width: 100%; /* Make images full width */
+        margin-left: 0; /* Remove left margin */
+        max-width: 100%; /* Ensure it does not exceed container */
+    }
+
+    .image-gallery {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center align items */
+        gap: 20px; /* Adjust gap for better spacing */
+        padding: 0; /* Remove left padding */
+        width: 100%; /* Full width */
+    }
+
+    .image-gallery div {
+        max-width: 100%; /* Ensure full width for divs */
+        width: 100%; /* Full width for each div */
+        text-align: center; /* Center text in image gallery */
+    }
+
+    .location-header {
+        font-size: 24px; /* Adjust font size */
+        text-align: center; /* Center the header */
+    }
+
+    .footer-print {
+        text-align: center; /* Center footer text */
+        padding-left: 0; /* Remove left padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .location-header {
+        font-size: 20px;
+    }
+
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: center; /* Center flex items */
+    }
+
+    .flex-item {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    img {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        margin-top: 20px;
+    }
+}
+
+.horizontal-line {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.line {
+    width: 80%;
+    max-width: 1200px;
+    height: 2px;
+    background-color: #FF7900;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+button:hover {
+    background-color: #ff7900;
+    transform: scale(1.05);
+}
+
+
+  .footer-content {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            padding: 1px 20px;
+            color: white;
+            gap: 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            margin-right: 25px;
+            justify-content: center;
+            height: 100%;
+            padding-top:5px;
+            padding-bottom: -5px;
+        }
+.footer-section .logo img {
+    margin-left: 20px;
+    padding-bottom: 5px;
+}
+        .footer-icons {
+    display: flex;
+    gap: 10px;
+            padding-bottom: -5px;
+
+}
+
+.footer-icons img {
+    width: 24px;
+    height: 24px;
+            padding-bottom: -5px;
+}
+
+.footer-section div:last-child {
+    margin-top: 1px;
+    font-size: 16px;
+    color: white;
+}
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .footer-section .logo img {
+        margin-left: 0;
+    }
+
+    .footer-section div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-icons {
+        justify-content: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="monk1.png" alt="Logo">
+    </a>
+    <div class="nav-links">
+        <a href="work.html">Work</a>
+        <a href="about.html" class="active">About</a>
+        <a href="connect.html">Connect</a>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="story-partner">
+        <div>
+            <h2>We are Story Tellers!</h2>
+            <p>Your Event and Marketing Partner in Africa.</p>
+        </div>
+        <img src="about1.png" alt="Descriptive Alt Text">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="footer-print">Our FootPrint</h3>
+    <div class="image-gallery">
+        <div>
+            <img src="about22.png" alt="Image 1">
+            <h3 class="location-header">Addis Ababa, Ethiopia</h3>
+        </div>
+        <div>
+            <img src="about3.png" alt="Image 2">
+            <h3 class="location-header">Hawassa, Ethiopia</h3>
+        </div>
+        <div>
+            <img src="about4.png" alt="Image 3">
+            <h3 class="location-header">Kigali, Rwanda</h3>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="center-image" style="display: flex; justify-content: center; margin-top: 40px;">
+        <img src="about5.png" alt="Descriptive Alt Text" style="width: 100%; max-width: 450px; height: auto;">
+    </div>
+    <div class="center-text" style="text-align: center; margin-top: 20px;">
+        <p style="font-size: 35px; font-weight: bold;">We adopt strategic approaches to foster meaningful connections, brand<br> awareness, and lasting impact.</p>
+    </div>
+    <div style="text-align: right; margin-top: 20px;">
+        <div style="width: 80%; max-width: 1200px; height: 2px; background-color: #FF7900; margin-left: auto; margin-right: 0;"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 40px; padding: 0 20px; flex-wrap: wrap;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div style="flex: 1; margin-right: 20px; min-width: 300px;">
+            <h2 style="font-size: 45px; margin-bottom: 20px;">Services</h2>
+
+            <h3 style="font-size: 35px; font-weight: bold; margin-bottom: 10px;">Event Management</h3>
+            <br>
+            <br>
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Event Planning & Execution</h3>
+                <p style="font-size: 18px;">We meticulously plan and execute events of all sizes, from intimate gatherings to large-scale conferences.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Venue Selection & Logistics</h3>
+                <p style="font-size: 18px;">We source and secure suitable venues, manage logistics, and ensure seamless event execution.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Guest Management</h3>
+                <p style="font-size: 18px;">We handle guest registration and on-site management, and provide exceptional guest experiences.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Vendor Management</h3>
+                <p style="font-size: 18px;">We coordinate with vendors, ensuring high-quality services and seamless event operations.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Event Branding & Marketing</h3>
+                <p style="font-size: 18px;">We develop compelling event branding and create effective marketing campaigns to attract attendees and generate buzz.</p>
+            </div>
+        </div>
+
+
+        <div style="flex: 1; text-align: right; min-width: 300px; margin-top: 20px; margin-left: -50px;">
+            <img src="about6.png" alt="Descriptive Alt Text" style="width: 100%; max-width: 400px; height: auto; max-height: 450px;">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: left; margin-top: 20px;">
+        <div style="width: 80%; max-width: 1200px; height: 2px; background-color: #FF7900; margin-right: auto; margin-left: 0;"></div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 40px; padding: 0 20px; flex-wrap: wrap;">
+
+        <div style="flex: 1; text-align: left; min-width: 300px; margin-right: 20px; margin-left: 20px;">
+            <img src="about7.png" alt="Descriptive Alt Text" style="width: 100%; max-width: 400px; height: auto; max-height: 450px; margin-left: 60px;">
+        </div>
+
+        <div style="flex: 1; min-width: 300px;">
+            <h3 style="font-size: 35px; font-weight: bold; margin-bottom: 10px; margin-top: 90px;">Marketing</h3>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold; margin-top: 15px;">Digital Marketing</h3>
+                <p style="font-size: 18px; margin-top: 5px;">We specialize in social media marketing, search engine optimization (SEO), content marketing, email marketing, and pay-per-click (PPC) advertising.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold; margin-top: 15px;">Traditional Marketing</h3>
+                <p style="font-size: 18px; margin-top: 5px;">We offer print advertising, public relations, and other traditional marketing channels to reach your target audience.</p>
+            </div>
+        </div>
+    </div>
+    < <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: right; margin-top: 20px;">
+        <div style="width: 80%; max-width: 1200px; height: 2px; background-color: #FF7900; margin-left: auto; margin-right: 0;"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 90px; padding: 0 20px; flex-wrap: wrap;">
+
+        <div style="flex: 1; margin-right: 20px; min-width: 300px; margin-top: 90px;">
+
+            <h3 style="font-size: 35px; font-weight: bold; margin-bottom: 10px;">Content Creation</h3>
+            <br>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Digital Content</h3>
+                <p style="font-size: 18px;">We create high-quality content for your website, blogs, social media, and other digital platforms. This includes articles, infographics, videos, and more.</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; font-weight: bold;">Non-Digital Content</h3>
+                <p style="font-size: 18px;">We produce traditional content such as brochures, flyers, and print advertisements.</p>
+            </div>
+        </div>
+        <div style="flex: 1; text-align: right; min-width: 300px; margin-top: 20px; margin-left: -50px;">
+            <img src="about8.png" alt="Descriptive Alt Text" style="width: 100%; max-width: 400px; height: auto; max-height: 450px;">
+        </div>
+    </div>
+</div>
+<div style="text-align: center; margin-top: 40px;">
+    <h1 style="font-size: 35px; font-weight: bold;">Tell Your Story!</h1>
+    <a href="connect.html" style="text-decoration: none;">
+        <button style="width: 168px; height: 44px; background-color: #d9d9d9; border: 2px solid #ff7900; border-radius: 15px; cursor: pointer; margin-top: 20px; font-weight: 600; font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;">
+            Book Consultation
+        </button>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <a href="index.html" class="logo">
+                <img src="monk1.png" alt="Logo">
+            </a>
+        </div>
+        <div class="footer-section">
+            <div>Ethiopia: +251942471649</div>
+            <div>Rwanda: +250794555111</div>
+        </div>
+         <div class="footer-section">
+    <a href="mailto:Info.et@lamonje.com" class="email-link">Info.et@lamonje.com</a>
+    <a href="mailto:Info.rw@lamonje.com" class="email-link">Info.rw@lamonje.com</a>
+</div>
+<style>
+.email-link {
+    color: inherit; /* Keeps the link color the same as the surrounding text */
+    text-decoration: none; /* Removes the underline */
+}
+
+.email-link:hover {
+    text-decoration: underline; /* Adds underline on hover to indicate it's clickable */
+}
+</style>
+        <div class="footer-section">
+            <div><a href="work.html">Work</a></div>
+            <div><a href="about.html">About</a></div>
+        </div>
+        <style>
+            .footer-section a {
+                text-decoration: none;  /* Prevent underline */
+                color: inherit;         /* Maintain the current color (white in this case) */
+            }
+        </style>
+
+        <div class="footer-section">
+            <div style="display: flex; align-items: center;">
+                <a href="connect.html" style="text-decoration: none; color: inherit;">
+                    <div>Connect</div>
+                </a>&nbsp;&nbsp;&nbsp;
+                <div class="footer-icons">
+                    <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi33b3qweWIAxXiU6QEHTgzDy4QFnoECBUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fla_monje%2F&usg=AOvVaw1Ik4EjdyNeVr5YIsv6Ypuz&opi=89978449" target="_blank">
+                        <img src="ig.png" alt="Instagram Icon">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                        <img src="link.png" alt="LinkedIn Icon">
+                    </a>
+
+                    <a href="https://www.facebook.com/lamonjecomms" target="_blank">
+                        <img src="fb.png" alt="Facebook Icon">
+                    </a>
+
+                </div>
+            </div>
+            <div>Copyright. All Rights Reserved.</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
