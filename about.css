@@ -1,0 +1,329 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #282828;
+      overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  margin-left: 2rem;
+  width: 50px;
+  height: auto;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 30px;
+  background: rgba(255, 165, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  text-align: center;
+  color: #000000;
+}
+
+.nav-links a, .about-link {
+  text-decoration: none;
+  color: white;
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .about-link:hover {
+  color: #FF5733;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 270px;
+  top: 100%;
+  left: -1.8rem;
+  background: rgba(255, 165, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.show .dropdown-menu {
+  display: grid;
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  padding-top: 6rem;
+  height: auto;
+  margin-top: 0;
+}
+
+.about-left {
+  border-right: 4px solid white; /* Vertical border */
+  text-align: left; /* Align left */
+  width: 100%;
+  height: 100%; /* Ensure the border spans the full height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align text to the left */
+  margin-top: 2rem;
+}
+
+.about-left h2 {
+  font-size: clamp(20px, 2.5vw, 32px); /* Reduced text size */
+  margin: 0;
+  margin-left: 2rem; /* 2rem from the left side */
+}
+
+.about-right {
+  padding-left: 0;
+  margin-top: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.about-right p {
+  margin-bottom: 10px;
+  font-size: clamp(1.4rem, 2.8vw, 3.8rem); /* Slightly smaller text */
+  line-height: 1.6;
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+  .about-section {
+    flex-direction: row;
+    padding-top: 8rem;
+    min-height: 80vh;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .about-left {
+    border-right: 4px solid white;
+    height: 100%; /* Ensure the border extends fully */
+    margin-top: 2rem;
+    width: 30%;
+    padding-right: 2rem;
+  }
+
+  .about-left h2 {
+    margin-right: clamp(2rem, 8vw, 10rem);
+    margin-left: 2rem; /* 2rem from the left on larger screens */
+  }
+
+  .about-right {
+    padding-left: clamp(20px, 5vw, 60px);
+    margin-top: 0;
+    max-width: 60%;
+    text-align: left;
+  }
+
+  .about-right p {
+    font-size: clamp(2rem, 3vw, 3.8rem); /* Smaller text */
+    line-height: 1.3; /* Tighter line height */
+  }
+}
+
+/* Large screens adjustment */
+@media (min-width: 1200px) {
+  .about-right p {
+    font-size: clamp(2.4rem, 3.5vw, 4.5rem); /* Even smaller text */
+    line-height: 1.4;
+  }
+
+  .about-section {
+    padding-top: 12rem; /* More spacing from top */
+  }
+
+  .about-left {
+    height: 100vh; /* Full height for larger screens */
+    width: 25%;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .about-section {
+    padding-top: 5rem;
+  }
+
+  .about-right p {
+    font-size: 1.6rem; /* Smaller mobile text size */
+  }
+
+  .about-left h2 {
+    margin-left: 2rem; /* 2rem left margin for mobile */
+  }
+}
+
+
+/* Footer Styling */
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+/* Logo Styling */
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom:2rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2rem;
+}
+
+/* Plan a Call Header */
+.plan-a-call {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect and Animation */
+.plan-a-call:hover {
+    color: #fb8500;
+    transform: scale(1.05);
+}
+
+/* Centering the Email Links */
+.emails {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.emails a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.emails a:hover {
+    color: #fb8500;
+}
+
+/* Social Media Icons Styling */
+.social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #fb8500;
+}
+
+/* Mobile View (Below 768px) */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emails {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

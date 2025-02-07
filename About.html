@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about Page</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="about.js" defer></script>
+</head>
+<body>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <div class="nav-links-wrapper">
+        <div class="nav-links">
+            <div class="dropdown">
+                <span class="about-link">About</span>
+                <div class="dropdown-menu">
+                    <a href="About.html">About us</a>
+                    <a href="price.html">Pricing</a>
+                    <a href="outcome.html">Outcomes</a>
+                    <a href="#">Teams</a>
+                </div>
+            </div>
+
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+<main>
+    <section class="about-section">
+        <div class="about-left">
+            <h2>About</h2>
+        </div>
+        <div class="about-right">
+            <p>
+                At La Monje Communication, we believe every brand has a story to tell—a story that can inspire, connect, and transform. With a presence in Ethiopia and Rwanda,  Our team combines creativity, precision, and a deep understanding of local markets to deliver services that drive growth and build lasting connections. LET'S TELL YOUR STORY.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="capabilities">
+        <h1>Our Capabilities</h1>
+    </section>
+
+    <section class="cards-section">
+        <div class="card" style="--bg-color: #A67B5B; --rotation: -5deg;">
+            <h2>Content Creation</h2>
+            <p> We conceptualize, produce, and deliver high-quality videography, photography, visuals, and copy tailored to captivate your audience and align with your brand's voice.</p>
+        </div>
+        <div class="card" style="--bg-color: #6B7C41; --rotation: 3deg;">
+            <h2>Brand Development</h2>
+            <p>We design and implement cohesive brand identities and websites that reflect your vision and set you apart in the market. </p>
+        </div>
+        <div class="card" style="--bg-color: #D39B9B; --rotation: -2deg;">
+            <h2>Social Media Management</h2>
+            <p>We create and manage engaging social media content and campaigns, optimizing your presence to grow and connect with your audience effectively.</p>
+        </div>
+        <div class="card" style="--bg-color: #800000; --rotation: 5deg;">
+            <h2>Strategic Marketing Solutions</h2>
+            <p>We develop data-driven marketing strategies that target your audience, amplify your reach, and achieve measurable results.</p>
+        </div>
+        <div class="card" style="--bg-color: #000080; --rotation: -3deg;">
+            <h2>Event Support</h2>
+            <p>We plan, promote, and execute seamless events that leave a lasting impression and align with your organizational goals</p>
+        </div>
+    </section>
+
+    <style>
+        .capabilities h1 {
+          text-align: center;
+          font-size: 3rem;
+          font-weight: bold;
+          color: #ffffff;
+          padding-top: 10rem;
+        }
+
+        .cards-section {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          flex-wrap: wrap;
+          position: relative;
+          padding-top: 5rem;
+        }
+
+        .card {
+          width: 280px;
+          height: 400px;
+          background: var(--bg-color, #fff);
+          color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+          transform: rotate(var(--rotation, 0deg));
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: left;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+          transform: rotate(0deg) scale(1.05);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .card p {
+          font-size: 1.3rem;
+          margin: 0;
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+          .cards-section {
+            gap: 20px;
+          }
+
+          .card {
+            width: 200px;
+            height: 350px;
+          }
+
+          .capabilities h1 {
+            font-size: 2.5rem;
+          }
+        }
+    </style>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <img src="la.png" alt="Logo" class="footer-logo">
+            <div class="footer-content">
+                <!-- Plan a Call Section (Clickable) -->
+                <a href="contact.html" class="Make-a-call">
+                    <h2>Plan a Call</h2>
+                </a>
+                <div class="emails">
+                    <a href="info.rw@lamonje.com">info.rw@lamonje.com</a>
+                    <a href="info.et@lamonje.com">info.et@lamonje.com</a>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/la_monje/?__pwa=1#" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</main>
+<script>
+    gsap.from(".about-left h2", {
+      duration: 1,
+      x: -50,
+      opacity: 0,
+      ease: "power2.out",
+    });
+
+    gsap.from(".about-right p", {
+      duration: 1.5,
+      y: 30,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "power2.out",
+    });
+
+
+
+
+document.querySelectorAll(".card").forEach(card => {
+  const color = card.getAttribute("data-color");
+  card.style.setProperty("--fill-color", color);
+});
+
+</script>
+</body>
+</html>
