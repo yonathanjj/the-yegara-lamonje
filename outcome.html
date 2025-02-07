@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcomes</title>
+    <link rel="stylesheet" href="expertise.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="expertise.js" defer></script>
+</head>
+<body>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <div class="nav-links-wrapper">
+        <div class="nav-links">
+            <div class="dropdown">
+                <span class="about-link">About</span>
+                <div class="dropdown-menu">
+                    <a href="About.html">About us</a>
+                    <a href="price.html">Pricing</a>
+                    <a href="outcome.html">Outcomes</a>
+                    <a href="#">Teams</a>
+                </div>
+            </div>
+
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+<section class="main-section">
+    <div class="header-text">
+        Success stories<br> we are proud of
+    </div>
+    <div class="vertical-stack">
+        <div class="stack-item">
+            <div class="vertical-line"></div>
+            <div class="text-group">
+                <div class="number" data-target="3">0</div> <!-- Number to animate -->
+                <p class="description">African cities. We have successfully managed clients in two African countries and three African cities.</p>
+            </div>
+        </div>
+        <div class="stack-item">
+            <div class="vertical-line"></div>
+            <div class="text-group">
+                <div class="number" data-target="6">0</div> <!-- Number to animate -->
+                <p class="description">offices. We were able to gain a thorough understanding of our clients' businesses by establishing a small, creative office space inside their offices thanks to our "Shop in Shop" concept</p>
+            </div>
+        </div>
+        <div class="stack-item">
+            <div class="vertical-line"></div>
+            <div class="text-group">
+                <div class="number" data-target="10">0</div> <!-- Number to animate -->
+                <p class="description">Team Members</p>
+            </div>
+        </div>
+
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <img src="la.png" alt="Logo" class="footer-logo">
+        <div class="footer-content">
+            <!-- Plan a Call Section (Clickable) -->
+            <a href="contact.html" class="make a call">
+                <h2>Plan a Call</h2>
+            </a>
+            <div class="emails">
+                <a href="info.rw@lamonje.com">info.rw@lamonje.com</a>
+                <a href="info.et@lamonje.com">info.et@lamonje.com</a>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/la_monje/?__pwa=1#" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Add these FIRST in your head section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize GSAP
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animate main elements
+      gsap.from(".vertical-stack", {
+        opacity: 0,
+        x: 100,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".main-section",
+          start: "top center",
+          end: "bottom bottom",
+          toggleActions: "play pause resume reset"
+        }
+      });
+
+      gsap.from(".stack-item", {
+        opacity: 0,
+        x: 50,
+        duration: 0.8,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".vertical-stack",
+          start: "top 80%",
+          toggleActions: "play pause resume reset"
+        }
+      });
+
+      // Number counting animation
+      document.querySelectorAll('.number').forEach(number => {
+        const target = +number.dataset.target;
+
+        gsap.to(number, {
+          innerText: target,
+          duration: 2,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: number,
+            start: "top 90%",
+            toggleActions: "play pause resume reset"
+          },
+          onUpdate: function() {
+            number.innerText = Math.ceil(this.targets()[0].innerText);
+          }
+        });
+      });
+
+      // Footer animation
+      gsap.from(".footer", {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".footer",
+          start: "top 90%",
+        }
+      });
+    });
+</script>
+</body>
+</html>
