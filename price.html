@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about Page</title>
+    <link rel="stylesheet" href="price.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="price.js" defer></script>
+</head>
+<body>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <div class="nav-links-wrapper">
+        <div class="nav-links">
+            <div class="dropdown">
+                <span class="about-link">About</span>
+                <div class="dropdown-menu">
+                    <a href="About.html">About us</a>
+                    <a href="price.html">Pricing</a>
+                    <a href="outcome.html">Outcomes</a>
+                    <a href="#">Teams</a>
+                </div>
+            </div>
+
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- Upper Section -->
+    <div class="upper-section">
+        <div class="intro-text">
+            <h1>We're committed to clarity, reflected in both our pricing and our communication.</h1>
+            <p>Choose your project:</p>
+            <div class="buttons">
+                <button data-price="50">Content Creation</button>
+                <button data-price="300">Brand Development</button>
+                <button data-price="500">Social Media Management</button>
+                <button data-price="800">Strategic Marketing Solutions</button>
+                <button data-price="300">Event Support</button>
+            </div>
+        </div>
+        <div class="price">
+            <small>From</small>
+            <h1 id="price-display">50$</h1>
+        </div>
+    </div>
+</div>
+
+<div id="table">
+    <div class="header">
+        <div class="cell">Strategy</div>
+        <div class="cell">Design</div>
+        <div class="cell">Development</div>
+        <div class="cell">Content</div>
+    </div>
+    <div class="row">
+        <div class="cell">Brand Strategy Workshop</div>
+        <div class="cell">Branding Creation</div>
+        <div class="cell">Web Development</div>
+        <div class="cell">Content Concept</div>
+    </div>
+    <div class="row">
+        <div class="cell">Market Research</div>
+        <div class="cell">UX Design</div>
+        <div class="cell"></div>
+        <div class="cell">Content Creation</div>
+    </div>
+    <div class="row">
+        <div class="cell">Strategy Deck</div>
+
+    </div>
+    <div class="row">
+        <div class="cell">Moodboard Creation</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <img src="la.png" alt="Logo" class="footer-logo">
+        <div class="footer-content">
+            <!-- Plan a Call Section (Clickable) -->
+            <a href="contact.html" class="make a call">
+                <h2>Plan a Call</h2>
+            </a>
+            <div class="emails">
+                <a href="info.rw@lamonje.com">info.rw@lamonje.com</a>
+                <a href="info.et@lamonje.com">info.et@lamonje.com</a>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/la_monje/?__pwa=1#" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+    gsap.from(".upper-section", { opacity: 0, y: -50, duration: 1 });
+    gsap.from(".lower-section", { opacity: 0, y: 50, duration: 1 });
+
+    // Button click to update price
+    const buttons = document.querySelectorAll(".buttons button");
+    const priceDisplay = document.getElementById("price-display");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const price = button.getAttribute("data-price");
+            gsap.to(priceDisplay, { textContent: price, duration: 0.5, snap: { textContent: 1 } });
+        });
+    });
+
+
+
+       gsap.from(".column", {
+        opacity: 0,
+        y: 100,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power3.out"
+    });
+
+    const columns = document.querySelectorAll('.column');
+    columns.forEach(column => {
+        column.addEventListener('mouseenter', () => {
+            gsap.to(column, { scale: 1.1, duration: 0.3 });
+        });
+
+        column.addEventListener('mouseleave', () => {
+            gsap.to(column, { scale: 1, duration: 0.3 });
+        });
+    });
+
+
+</script>
+</body>
+</html>

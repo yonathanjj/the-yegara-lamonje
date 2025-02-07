@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work Page</title>
+    <link rel="stylesheet" href="work.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="work.js" defer></script>
+</head>
+<body>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <div class="nav-links-wrapper">
+        <div class="nav-links">
+            <div class="dropdown">
+                <span class="about-link">About</span>
+                <div class="dropdown-menu">
+                    <a href="About.html">About us</a>
+                    <a href="price.html">Pricing</a>
+                    <a href="outcome.html">Outcomes</a>
+                    <a href="#">Teams</a>
+                </div>
+            </div>
+
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="image-gallery">
+    <div class="grid-container">
+        <div class="grid-item">
+            <video src="lalavid.mp4" autoplay muted loop playsinline class="video-item"></video>
+        </a>
+        <h3>LaMonje</h3>
+        <p>Our company</p>
+    </div>
+
+        <div class="grid-item">
+            <a href="pep.html"><img src="pep1.jpg" alt="Image 1"></a>
+            <h3>PEP CPF</h3>
+        </div>
+        <div class="grid-item">
+            <a href="mignot.html"><img src="m1.jpg" alt="Image 2"></a>
+            <h3>Mignot Bazzar</h3>
+        </div>
+
+        <div class="grid-item">
+            <a href="look.html"><img src="look4.jpg" alt="Image 1"></a>
+            <h3>Lookup</h3>
+        </div>
+        <div class="grid-item">
+            <a href="psy.html"><img src="psy6.jpg" alt="Image 2"></a>
+            <h3>PSY Addis</h3>
+        </div>
+
+        <div class="grid-item">
+            <a href="vision.html"><img src="vision1.png" alt="Image 1"></a>
+            <h3>Vision wear</h3>
+        </div>
+        <div class="grid-item">
+            <a href="boab.html"><img src="boab6.jpg" alt="Image 2"></a>
+            <h3>Baobab Superfoods</h3>
+        </div>
+
+        <div class="grid-item">
+            <a href="axum.html"><img src="aksum6.jpg" alt="Image 1"></a>
+            <h3>Axum Resturant</h3>
+        </div>
+
+        <div class="grid-item">
+            <a href="act.html"><img src="act1.jpg" alt="Image 2"></a>
+            <h3>Actionaid Ethiopia</h3>
+        </div>
+
+        <div class="grid-item">
+            <a href="fashion.html"><img src="Hafw.png" alt="Image 1"></a>
+            <h3>Runaway Fashion Series</h3>
+        </div>
+
+        <div class="grid-item">
+            <video src="shade2.mov" autoplay muted loop playsinline class="video-item"></video>
+            <h3>Shades of Addis</h3>
+        </div>
+
+
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <img src="la.png" alt="Logo" class="footer-logo">
+        <div class="footer-content">
+            <!-- Plan a Call Section (Clickable) -->
+            <a href="contact.html" class="Make-a-call">
+                <h2>Plan a Call</h2>
+            </a>
+            <div class="emails">
+                <a href="info.rw@lamonje.com">info.rw@lamonje.com</a>
+                <a href="info.et@lamonje.com">info.et@lamonje.com</a>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/la_monje/?__pwa=1#" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", () => {
+      // GSAP animation for the grid container
+      gsap.to(".grid-container", {
+        opacity: 1,          // Fade in
+        y: 0,                // Slide into position
+        duration: 1.2,       // Animation duration
+        ease: "power3.out",  // Easing function
+        delay: 0.3           // Slight delay
+      });
+
+      // Stagger animation for individual items
+      gsap.from(".grid-item", {
+        opacity: 0,          // Fade in items
+        scale: 0.8,          // Start smaller
+        y: 50,               // Start lower
+        duration: 0.8,       // Animation duration
+        stagger: 0.2,        // Stagger effect between items
+        ease: "power3.out"   // Easing function
+      });
+    });
+
+ // Create the custom cursor element
+const customCursor = document.createElement('div');
+customCursor.classList.add('custom-cursor');
+document.body.appendChild(customCursor);
+
+// Update position of the custom cursor based on mouse movement
+document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = `${e.pageX}px`;
+    customCursor.style.top = `${e.pageY}px`;
+});
+
+// Select all grid items (images)
+const gridItems = document.querySelectorAll('.grid-item');
+
+// Show the custom cursor when entering a .grid-item and hide the default cursor
+gridItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        document.body.classList.add('story-hover-active'); // Hide the default cursor
+        customCursor.style.display = 'block'; // Show the custom cursor
+    });
+
+    // Hide the custom cursor and bring back the default cursor when mouse leaves
+    item.addEventListener('mouseleave', () => {
+        document.body.classList.remove('story-hover-active'); // Restore default cursor
+        customCursor.style.display = 'none'; // Hide the custom cursor
+    });
+});
+
+
+</script>
+
+</body>
+</html>
