@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="home.js" defer></script>
+</head>
+<body>
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+
+    <div class="nav-links-wrapper">
+        <div class="nav-links">
+            <div class="dropdown">
+                <span class="about-link">About</span>
+                <div class="dropdown-menu">
+                    <a href="About.html">About us</a>
+                    <a href="price.html">Pricing</a>
+                    <a href="outcome.html">Outcomes</a>
+                    <a href="#">Teams</a>
+                </div>
+            </div>
+
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+<div id="particles-js"></div>
+
+<main>
+    <section class="hero">
+        <!-- Desktop Video -->
+        <video class="hero-video desktop-video" autoplay muted loop playsinline>
+            <source src="hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Mobile Video -->
+        <video class="hero-video mobile-video" autoplay muted loop playsinline>
+            <source src="mob.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+
+
+    <div class="jump-to-section">
+        <div class="jump-text">Jumpto</div>
+        <div class="vertical-line"></div>
+        <div class="images-grid">
+            <div class="image-item">
+                <a href="work.html">
+                    <img src="aksum.png" alt="Image 1">
+                </a>
+                <div class="image-text">
+                    <div class="title">Recent Work</div>
+                    <div class="subtitle">The Branding of a beautiful Reaturant</div>
+                </div>
+            </div>
+            <div class="image-item">
+                <a href="price.html">
+                    <img src="frame.jpg" alt="Image 2">
+                </a>
+                <div class="image-text">
+                    <div class="title">Pricing</div>
+                    <div class="subtitle">Transparent and amazingly fair pricing </div>
+                </div>
+            </div>
+            <div class="image-item">
+                <a href="page3.html">
+                    <img src="team.jpg" alt="Image 3">
+                </a>
+                <div class="image-text">
+                    <div class="title">Our Team</div>
+                    <div class="subtitle">Check out our perfect team</div>
+                </div>
+            </div>
+            <div class="image-item">
+                <a href="contact.html">
+                    <img src="call.jpg" alt="Image 4">
+                </a>
+                <div class="image-text">
+                    <div class="title">Connect</div>
+                    <div class="subtitle">Hit us up and let's connect for amazing projects</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="recent-works-section">
+        <h2>Our Recent Works</h2>
+        <div class="recent-works">
+            <div class="work-item">
+                <div class="work-overlay">
+                    <div class="title">Vision Crafters</div>
+                    <div class="description">A brief description of the first project.</div>
+                </div>
+                <img src="vision.png" alt="Work 1">
+            </div>
+            <div class="work-item">
+                <div class="work-overlay">
+                    <div class="title">Shades of Addis</div>
+                    <div class="description">A brief description of the second project.</div>
+                </div>
+                <img src="addis.png" alt="Work 2">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="success-stories">
+        <h2>Success Stories</h2>
+
+        <!-- Success Story 1 -->
+        <div class="story">
+            <a href="vision.html">
+                <div class="story-content">
+                    <h3>Vision Crafters</h3>
+                    <p>See what we achieved</p>
+                </div>
+                <img src="vision2.png" alt="Project 2">
+            </a>
+        </div>
+
+
+        <!-- Success Story 2 -->
+        <div class="story">
+            <a href="axum.html">
+                <div class="story-content">
+                    <h3>Axum Resturant</h3>
+                    <p>See what we achieved</p>
+                </div>
+                <img src="aksum.png" alt="Project 2">
+            </a>
+        </div>
+
+        <!-- Success Story 3 -->
+        <div class="story">
+            <a href="psy.html">
+                <div class="story-content">
+                    <h3>PSY Addis</h3>
+                    <p>See what we achieved</p>
+                </div>
+                <img src="psy.png" alt="Project 2">
+            </a>
+        </div>
+
+        <!-- Success Story 4 -->
+        <div class="story">
+            <a href="fashion.html">
+                <div class="story-content">
+                    <h3>Fashion Series</h3>
+                    <p>Discover more</p>
+                </div>
+                <img src="addis.png" alt="Project 4">
+            </a>
+        </div>
+    </section>
+
+
+
+    <section class="reviews">
+        <!-- Background Image as an img element -->
+        <div class="background-image-container">
+            <img src="make.png" alt="Background Image" class="background-image">
+        </div>
+
+        <!-- Review Card Section -->
+        <div class="review-card">
+            <h2 class="review-title">What Our Clients Say</h2>
+            <div class="reviews-container">
+                <div class="review">
+                    <div class="reviewer">
+                        <img src="s.png" alt="Client 1">
+                        <span class="name">John Doe</span>
+                    </div>
+                    <p class="review-text">"Results speak for themselves."</p>
+                </div>
+                <div class="review">
+                    <div class="reviewer">
+                        <img src="geezy.png" alt="Client 2">
+                        <span class="name">Jane Smith</span>
+                    </div>
+                    <p class="review-text">"Love the fresh perspective."</p>
+                </div>
+                <div class="review">
+                    <div class="reviewer">
+                        <img src="cera.png" alt="Client 3">
+                        <span class="name">Michael Brown</span>
+                    </div>
+                    <p class="review-text">"Fantastic experience. Would definitely use their services again."</p>
+                </div>
+                <div class="review">
+                    <div class="reviewer">
+                        <img src="card.png" alt="Client 4">
+                        <span class="name">Emily Davis</span>
+                    </div>
+                    <p class="review-text">"Finally, a team that gets us!"</p>
+                </div>
+                <div class="review">
+                    <div class="reviewer">
+                        <img src="client5.jpg" alt="Client 5">
+                        <span class="name">David Wilson</span>
+                    </div>
+                    <p class="review-text">"Creative and effective – thanks!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <img src="la.png" alt="Logo" class="footer-logo">
+            <div class="footer-content">
+                <!-- Plan a Call Section (Clickable) -->
+                <a href="contact.html" class="make a call">
+                    <h2>Plan a Call</h2>
+                </a>
+                <div class="emails">
+                    <a href="info.rw@lamonje.com">info.rw@lamonje.com</a>
+                    <a href="info.et@lamonje.com">info.et@lamonje.com</a>
+                </div>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/la_monje/?__pwa=1#" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</main>
+<script>
+    // Select all story elements
+const stories = document.querySelectorAll('.story');
+
+// Create the custom cursor element
+const customCursor = document.createElement('div');
+customCursor.classList.add('custom-cursor');
+customCursor.textContent = "Explore Project"; // Set the text inside the rectangle
+document.body.appendChild(customCursor);
+
+// Update position of the custom cursor based on mouse movement
+document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = `${e.pageX}px`;
+    customCursor.style.top = `${e.pageY}px`;
+});
+
+// Show the custom cursor when entering .story and hide the default cursor
+stories.forEach(story => {
+    story.addEventListener('mouseenter', () => {
+        document.body.classList.add('story-hover-active'); // Hide the default cursor
+        customCursor.style.display = 'block'; // Show the custom cursor
+    });
+
+    // Hide the custom cursor and bring back the default cursor
+    story.addEventListener('mouseleave', () => {
+        document.body.classList.remove('story-hover-active'); // Restore the default cursor
+        customCursor.style.display = 'none'; // Hide the custom cursor
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    let reviews = document.querySelectorAll(".review");
+    let currentReview = 0;
+
+    // Function to show the current review with animation
+    function showReview() {
+        // Animate the current review fading out with a scale effect
+        gsap.to(reviews[currentReview], {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            ease: "power1.out",
+            onComplete: () => {
+                // Hide all reviews
+                reviews.forEach((review) => {
+                    review.style.display = "none";
+                });
+
+                // Show the next review
+                currentReview = (currentReview + 1) % reviews.length;
+                reviews[currentReview].style.display = "block";
+
+                // Animate the new review fading in with a bounce scale effect
+                gsap.fromTo(reviews[currentReview], {
+                    opacity: 0,
+                    scale: 0.8
+                }, {
+                    opacity: 1,
+                    scale: 1.1, // Start a little larger
+                    duration: 0.5,
+                    ease: "back.out(1.7)", // Bounce easing
+                    onComplete: () => {
+                        // Return to normal size after bounce
+                        gsap.to(reviews[currentReview], {
+                            scale: 1,
+                            duration: 0.2,
+                            ease: "power1.out"
+                        });
+
+                        // Start the typing animation for the paragraph text
+                        const paragraph = reviews[currentReview].querySelector(".review-text");
+                        typeWriter(paragraph);
+                    }
+                });
+            }
+        });
+    }
+
+    // Function for typing effect (faster typing speed)
+    function typeWriter(element) {
+        let text = element.innerText;
+        element.innerText = ""; // Clear the initial text
+        let i = 0;
+
+        // Type each letter with a faster delay (speed up the typing effect)
+        const typingInterval = setInterval(() => {
+            if (i < text.length) {
+                element.innerText += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingInterval); // Stop the typing when all text is written
+            }
+        }, 50); // Adjusted to 50ms for faster typing (lower value = faster typing)
+    }
+
+    // Initially show the first review
+    reviews[currentReview].style.display = "block";
+
+    // Change the review every 5 seconds (adjusted from 7 to 5 seconds)
+    setInterval(showReview, 5000);
+});
+
+</script>
+</body>
+</html>
