@@ -1,0 +1,829 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #e9ecef;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  margin-left: 1rem;
+  width: 50px;
+  height: auto;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 30px;
+  background: rgba(255, 165, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.nav-links a, .about-link {
+  text-decoration: none;
+  color: white;
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .about-link:hover {
+  color: #FF5733;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 270px;
+  top: 100%;
+  left: -1.8rem;
+  background: rgba(255, 165, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.show .dropdown-menu {
+  display: grid;
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Hide the mobile video by default */
+.mobile-video {
+    display: none;
+}
+
+/* On mobile devices, show the mobile video and hide the desktop video */
+@media (max-width: 768px) {
+    .desktop-video {
+        display: none;
+    }
+    .mobile-video {
+        display: block;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Background Overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes colorShift {
+    0%, 100% {
+        color: orange;
+    }
+    50% {
+        color: yellow;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* Base styles */
+.jump-to-section {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  justify-content: flex-start;
+}
+
+.jump-to-section .jump-text {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.jump-to-section .vertical-line {
+  height: 30rem;
+  width: 2px;
+  background-color: black;
+  margin-left: 15rem;
+  margin-right: 4rem;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-left: 0;
+  width: 70%;
+}
+
+.image-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.image-item a {
+  display: block;
+}
+
+.image-item img {
+  width: 225px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.image-item img:hover {
+  filter: blur(3px);
+  transform: scale(1.05);
+}
+
+.image-item .image-text {
+  margin-left: 1rem;
+}
+
+.image-item .image-text .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.image-item .image-text .subtitle {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .images-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .image-item {
+    flex-shrink: 0;
+    flex-direction: row; /* Keep text to the side of the image */
+    width: auto;
+  }
+
+  .image-item img {
+    width: 180px;
+    height: auto;
+  }
+
+  .image-item .image-text {
+    margin-left: 1rem;
+    text-align: left; /* Align text to the left */
+  }
+
+  .jump-to-section .vertical-line {
+    display: none;
+  }
+
+  .jump-to-section .jump-text {
+    font-size: 20px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .images-grid {
+    gap: 1.5rem;
+  }
+
+  .image-item img {
+    width: 150px;
+  }
+
+  .image-item .image-text {
+    margin-left: 0.5rem;
+  }
+
+  .jump-to-section .jump-text {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+/* Overall Section Styling */
+.recent-works-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.recent-works-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Grid Layout for Work Items */
+.recent-works {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+/* Work Item Styling */
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 100%;
+}
+
+/* Work Item Image Styling */
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Images */
+.work-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay for Titles and Descriptions */
+.work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    z-index: 2; /* Ensure it's above the image */
+}
+
+/* Title in Top Left */
+.work-overlay .title {
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3; /* Ensure title is above the overlay */
+}
+
+/* Description at Bottom Left */
+.work-overlay .description {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 10px;
+    max-width: 90%;
+    z-index: 3; /* Ensure description is above the overlay */
+}
+
+/* Show Overlay Always (Remove Hover Effect) */
+.work-overlay {
+    opacity: 1; /* Always visible */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .recent-works {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .recent-works-section {
+        padding: 1rem;
+    }
+
+    .work-overlay .title {
+        font-size: 18px;
+    }
+
+    .work-overlay .description {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+/* Success Stories Section */
+.custom-cursor {
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    background-color: rgba(255, 127, 0, 0.8);
+    border: 2px solid #333;
+    border-radius: 25px;
+    pointer-events: none;
+    display: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    transition: transform 0.1s ease-out;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Cursor hide style */
+body.story-hover-active {
+    cursor: none;
+}
+
+
+
+.success-stories {
+    padding: 2rem;
+    text-align: center;
+}
+
+.success-stories h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+/* Individual Story Container */
+.story {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Image/GIF/Video Styling */
+.story img,
+.story video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text Content Styling */
+.story-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+}
+
+/* Header Text Styling */
+.story-content h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Smaller Text Styling */
+.story-content p {
+    font-size: 18px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: lighter;
+    text-align: right;
+    margin-right:4rem
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .story {
+        height: 500px;
+    }
+
+    .story-content h3 {
+        font-size: 24px;
+    }
+
+    .story-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-content {
+        top: 40%;
+        left: 5%;
+        transform: translateY(-40%);
+    }
+
+    .story-content h3 {
+        font-size: 18px;
+    }
+
+    .story-content p {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Section Styling */
+.video-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+/* Video Container */
+.video-container {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+}
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* General Section Styling */
+.reviews {
+    position: relative;
+    width: 97%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+/* Background Image Container */
+.background-image-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 15px;
+}
+
+/* Background Image Styling */
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    border-radius: 15px;
+}
+
+/* Review Card */
+.review-card {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Title in the Card */
+.review-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* Review Content Styling */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.review {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.reviewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.reviewer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: -5rem;
+}
+
+.reviewer .name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: -5rem;
+}
+
+.review-text {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    background-color: #e9ecef;
+}
+
+.footer-container {
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+/* Logo Styling */
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom:2rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2rem;
+}
+
+/* Plan a Call Header */
+.plan-a-call {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect and Animation */
+.plan-a-call:hover {
+    color: #fb8500;
+    transform: scale(1.05);
+}
+
+/* Centering the Email Links */
+.emails {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.emails a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.emails a:hover {
+    color: #fb8500;
+}
+
+/* Social Media Icons Styling */
+.social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #fb8500;
+}
+
+/* Mobile View (Below 768px) */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emails {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .social-media {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
